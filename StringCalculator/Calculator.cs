@@ -14,6 +14,10 @@ namespace StringCalculator
             {
                 return 0;
             }
+            else
+            {
+                return Double.Parse(numbers);
+            }
             return null;
         }
     }
