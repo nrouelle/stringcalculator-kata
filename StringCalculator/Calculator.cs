@@ -19,9 +19,16 @@ namespace StringCalculator
             {
                 if(numbers.Contains(separator))
                 {
-                    var a = Double.Parse(numbers.Split(separator.ToCharArray())[0]);
-                    var b = Double.Parse(numbers.Split(separator.ToCharArray())[1]);
-                    return a + b;
+                    int total = 0;
+
+                    var chars = numbers.Split(separator.ToCharArray());
+
+                    foreach (var number in chars)
+                    {
+                        total += int.Parse(number);
+                    }
+
+                    return total;
                 }
                 return Double.Parse(numbers);
             }
