@@ -5,6 +5,7 @@ namespace StringCalculator
     internal class Calculator
     {
         const string separator = ",";
+        string[] stringSeparators = new string[] { ",", "\n" };
         public Calculator()
         {
         }
@@ -17,11 +18,11 @@ namespace StringCalculator
             }
             else
             {
-                if(numbers.Contains(separator))
+                if(numbers.Contains(stringSeparators[0]) || numbers.Contains(stringSeparators[1]))
                 {
                     int total = 0;
 
-                    var chars = numbers.Split(separator.ToCharArray());
+                    var chars = numbers.Split(stringSeparators, StringSplitOptions.RemoveEmptyEntries);
 
                     foreach (var number in chars)
                     {
